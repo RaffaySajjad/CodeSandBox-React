@@ -55,7 +55,7 @@ export const Instructions: React.FC<any> = (props) => {
         <a
           href="https://planto-app-assets.s3.amazonaws.com/images/assessment/preview.jpg"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           <Img
             src="https://planto-app-assets.s3.amazonaws.com/images/assessment/preview.jpg"

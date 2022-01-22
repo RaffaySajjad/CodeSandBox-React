@@ -5,3 +5,52 @@
 * {
   font-family: "Raleway", sans-serif;
 }
+
+table, th, td {
+  border:5px solid black;
+  border-collapse: collapse;
+}
+
+tr > th {
+  text-align: center;
+  padding: 15px;
+  font-size:20px
+}
+
+img, span {
+  vertical-align: middle
+}
+
+.addButton {
+  float: left
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  font-size: 14px;
+  color: rgb(75, 74, 74);
+  margin-bottom: '15px';
+  margin-top: '15px';
+}
+
+#heading {
+  margin-top: -15px; 
+  margin-bottom: 20px;
+}
+
+#bulletColor li::before {
+  content: "\2022";
+  font-size: 25px;
+  color: rgb(47, 221, 192);
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+}
+
+.editSubComponent {
+  padding: 15px;
+}

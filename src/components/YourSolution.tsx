@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const Container = styled("div")`
   border: 1px solid grey;
+  width: 1000px;
   padding: 15px;
 `;
 

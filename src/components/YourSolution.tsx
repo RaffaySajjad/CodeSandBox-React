@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Container = styled("div")`
@@ -101,14 +101,26 @@ const Bullets = styled("div")`
 `;
 
 export const YourSolution: React.FC<any> = (props) => {
-  const defaultText = "Lorem Ipsum is simply dummy text of the printing"
-  const [bullet, setBullet] = useState([defaultText]);
+  const defaultText = "Lorem Ipsum is simply dummy text of the printing."
+  const [bullet, setBullet] = useState<string[]>([]);
   const [headline, setHeadline] = useState("How it works");
   const onChangeHandler = (index: number, value: string) => {
     setBullet((bullets) =>
       bullets.map((bullet, i) => (i === index ? value : bullet))
     );
   };
+
+  useEffect(() => {
+    fetch(
+      "https://reqres.in/api/users?page=2")
+        .then((res) => res.json())
+        .then((json) => {
+          json.data.map((data: any) => {
+            setBullet((bullets) => [...bullets, data.email]);
+            return console.log(data.email);
+          })
+        })
+  }, [])
 
   const addBullet = () => {
     setBullet((bullets) => [...bullets, defaultText]);
